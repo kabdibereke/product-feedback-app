@@ -9,7 +9,7 @@ import Menu from '../Menu/Menu'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '@/store/intex'
 import { IProductRequests } from '@/interface/interface'
-import { sortEdit } from '@/store/slice/sortSlice'
+import { addEmpty, sortEdit } from '@/store/slice/sortSlice'
 import { useRouter } from 'next/router'
 
 interface INavbar {
@@ -36,6 +36,10 @@ const Navbar = ({suggestList}:INavbar) => {
         )
     },[])
 
+    useEffect(()=> {
+        dispatch(addEmpty(suggestList.length))
+    },[suggestList])
+
     const handleOpen =(e: React.MouseEvent<HTMLDivElement, MouseEvent>)=> {
         e.stopPropagation()
         setOpen(!open)
@@ -51,7 +55,7 @@ const Navbar = ({suggestList}:INavbar) => {
                 <Image className={styles.arrow} src={open? arrowDown: arrow} alt='arrow' width={12} height={8} onClick={handleOpen}/>
             </div>
         </div>
-        <Button types='add' onClick={()=>router.push('/create-feedback')}> + Add Feedback</Button>
+        <Button  types='add' onClick={()=>router.push('/create-feedback')}> + Add Feedback</Button>
         <Menu arr={arr} setSelected={setSelected} selected={selected} setOpen={setOpen} className={open? styles.menu :styles.close}/>
     </div>
   )

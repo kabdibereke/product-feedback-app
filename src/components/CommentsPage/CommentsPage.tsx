@@ -52,7 +52,7 @@ const CommentsPage = (props: Props) => {
             }
             })}
           <div className={styles.comment_wrapper}>
-            <p className={styles.title}>4 Comments</p>
+            <p className={styles.title}>{lastIndex} Comments</p>
             {commentList.map((item,index)=> {
                   return <Comment key={index} comment={item} />
             })}

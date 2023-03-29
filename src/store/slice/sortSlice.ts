@@ -6,12 +6,14 @@ interface IFeedback {
 	filterResult: string;
 	sortResult: string;
 	requestList: IProductRequests[];
+	empty: number;
 }
 
 const initialState: IFeedback = {
 	filterResult: "All",
 	sortResult: "Most Upvotes",
 	requestList: [],
+	empty: 0,
 };
 
 export const FeedbackSlice = createSlice({
@@ -28,9 +30,13 @@ export const FeedbackSlice = createSlice({
 		sortEdit: (state, action) => {
 			state.sortResult = action.payload;
 		},
+		addEmpty: (state, action) => {
+			state.empty = action.payload;
+		},
 	},
 });
 
-export const { filterEdit, sortEdit, addList } = FeedbackSlice.actions;
+export const { filterEdit, sortEdit, addList, addEmpty } =
+	FeedbackSlice.actions;
 
 export default FeedbackSlice.reducer;

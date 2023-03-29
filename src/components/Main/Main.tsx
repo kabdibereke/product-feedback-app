@@ -9,15 +9,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ClipLoader } from 'react-spinners'
 
 import { db } from '../../../firebase'
+import Empty from '../Empty/Empty'
 import Feedback from '../Feedback/Feedback'
-import Header from '../Header/Header'
+
 import Navbar from '../Navbar/Navbar'
 import styles from './Main.module.scss'
 
 const Main = () => {
   const [loading, setLoading] =useState(false)
   const [error, setError]= useState(false)
-  const {filterResult,sortResult,requestList} = useSelector((item:RootState)=>item.sortList)
+
+  const {filterResult,sortResult,requestList,empty} = useSelector((item:RootState)=>item.sortList)
   const dispatch = useDispatch<AppDispatch>()
   const router = useRouter()
   useEffect(()=> {
@@ -94,16 +96,17 @@ const Main = () => {
           size={100}
         />
           </div>}
-        {requestList.filter(item=> {
+        {requestList.filter(items=> {
           if(filterResult=='All') {
-            return item
+            return items
           }else {
-            return item.category.includes(filterResult.toLowerCase())
+            
+            return items.category.includes(filterResult.toLowerCase())
           }
         }).map((item,index)=> {
           return <Feedback key={index} item={item}  click={true}/>
-        })}
-        
+        }) }
+        {!loading && empty==0? <Empty/>: ''}
       
     </div>
     </>
