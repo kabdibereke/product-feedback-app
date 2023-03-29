@@ -21,6 +21,8 @@
 html {
 background: var(--bg);
 overflow-x: hidden;
+position: relative;
+    height: 100%;
 }
 
 .container {
