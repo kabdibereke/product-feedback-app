@@ -1,0 +1,34 @@
+.block {
+    max-width: 730px;
+    margin: 0 auto;
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .go_back_button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .link {
+            text-decoration: none;
+            color:var(--white)
+        }
+    }
+    .comment_wrapper {
+        margin-top: 24px;
+        width: 100%;
+        height: fit-content;
+        padding: 32px;
+        background-color: var(--white);
+        border-radius: 10px;
+        .title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: -0.25px;
+            color: var(--boldtext);
+            margin-bottom: 24px;
+        }
+    }
+}

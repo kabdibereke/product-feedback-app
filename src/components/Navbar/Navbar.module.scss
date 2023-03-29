@@ -1,0 +1,114 @@
+.wrapper {
+    max-width: 825px;
+    height: 72px;
+    background: var(--darkblue);
+    border-radius: 10px;
+    padding: 16px 16px 16px 24px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    .logo_wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        
+        .title{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: -0.25px;
+            color: #FFFFFF;
+            margin-right: 22px;
+        }
+        .sort_wrapper {
+            
+            display: flex;
+            align-items: center;
+            .sort {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: var(--bg);
+            }
+            .option {
+                @extend .sort;
+                font-weight: 700;
+                cursor: pointer;
+            }
+            .arrow  {
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+    .menu {
+        transition: 0.3s;
+        top: 80px;
+        left: 215px;
+        position: absolute;
+    }
+    .close {
+        transition: 0.3s;
+        display: none;
+    }
+}
+
+@media(max-width:615px) {
+    .wrapper {
+        max-width: 825px;
+        height: 72px;
+        background: var(--darkblue);
+        border-radius: 10px;
+        padding: 10px  ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        .logo_wrapper {
+            display: flex;
+            align-items: center;
+            
+            gap: 16px;
+            .img {
+                display: none;
+            }
+            .title{
+                display: none;
+            }
+            .sort_wrapper {
+                
+                display: flex;
+                align-items: center;
+                
+                .sort {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: var(--bg);
+                }
+                .option {
+                    @extend .sort;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+                .arrow  {
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .menu {
+            transition: 0.3s;
+            top: 80px;
+            left: 50px;
+            position: absolute;
+        }
+        .close {
+            transition: 0.3s;
+            display: none;
+        }
+    }
+}

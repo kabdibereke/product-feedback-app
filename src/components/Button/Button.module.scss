@@ -1,0 +1,48 @@
+.button {
+    background: var(--purple);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 12px 24px;
+    height: 44px;
+    border: none;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--bg);
+    transition: 0.3s;
+    &:hover {
+        transition: 0.3s;
+        background:#C75AF6
+    }
+}
+
+.edit {
+    @extend .button;
+    background: var(--navyblue);
+    &:hover {
+        background: #7C91F9;
+    }
+}
+.delete {
+    @extend .button;
+    background: #D73737;
+    &:hover {
+        background: #E98888;
+    }
+}
+.cancel {
+    @extend .button;
+    background: var(--boldtext);
+    &:hover {
+        background: #656EA3;
+    }
+}
+
+@media(max-width:615px) {
+    .button {
+        font-size: 10px;
+        padding: 10px;
+    }
+}

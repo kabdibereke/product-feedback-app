@@ -1,0 +1,113 @@
+.block {
+    margin-top: 24px;
+    height: fit-content;
+    width: 223px;
+    padding: 20px 24px;
+    border-top: 8px solid var(--pink);
+    background-color: var(--white);
+    border-radius: 10px;
+    .name_wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 14px;
+        span {
+            background: var(--pink);
+            width: 8px;
+            height: 8px;
+            border-radius:100% ;
+        }
+        .name {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 19px;
+            color: var(--text);
+            
+        }
+    }
+    .text {
+        text-decoration: none;
+        .title{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 19px;
+            letter-spacing: -0.180556px;
+            color: var(--darkblue);
+            margin-bottom: 9px;
+        }
+        .subtitle {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 19px;
+
+            color: #647196;
+        }
+        .tag {
+            margin-top: 17px;
+            height: 30px;
+            padding: 5px 16px;
+            background: #F2F4FF;
+            border-radius: 10px;
+            width: fit-content;
+            text-align: center;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 19px;
+            color: var(--navyblue);
+        }
+    }
+    .rating {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        .comments {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .count {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 13px;
+                line-height: 19px;
+                text-align: center;
+                letter-spacing: -0.180556px;
+               color: var(--darkblue);
+
+            }
+        }
+    }
+}
+
+.planned {
+    @extend .block;
+    border-top: 8px solid var(--pink);
+    .name_wrapper {
+        span {
+            background: var(--pink);
+        }
+    }
+}
+
+.live {
+    @extend .block;
+    border-top: 8px solid var(--blue);
+    .name_wrapper {
+        span {
+            background: var(--blue);
+        }
+    }
+}
+
+.inProgress {
+    @extend .block;
+    border-top: 8px solid var(--purple);
+    .name_wrapper {
+        span {
+            background: var(--purple);
+        }
+    }
+}

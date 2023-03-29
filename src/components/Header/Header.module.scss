@@ -1,0 +1,9 @@
+.board {
+    display: none;
+}
+@media(max-width:692px) {
+    .board {
+        display: block;
+        
+    }
+}
