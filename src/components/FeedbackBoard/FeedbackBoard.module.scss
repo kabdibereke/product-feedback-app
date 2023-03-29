@@ -92,6 +92,7 @@
             }
         }
         .sidebar {
+            overflow-x: hidden;
             display: flex;
             gap: 20px;
             position: absolute;
