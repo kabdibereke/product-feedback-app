@@ -62,7 +62,7 @@ const Comment = ({comment}: IComment) => {
         
     </div>
     {comment.replies?.map((item,index)=> {
-        return <RepliesComment key={index} comment={item} user={comment.user.username}/>
+        return <RepliesComment lastIndex={lastIndex} repIndex={repIndex} repliesUser={repliesUser} key={index} comment={item} user={comment.user.username}/>
     })}
     {open && <AddRepliesComment  lastIndex={lastIndex} setOpen={setOpen} repIndex={repIndex} repliesUser={repliesUser}/>}
     </div>

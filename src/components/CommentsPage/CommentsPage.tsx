@@ -29,6 +29,11 @@ const CommentsPage = (props: Props) => {
                 if(item.comments) {
                     setCommentList(item.comments)
                     setLastIndex(item.comments.length)
+                    item.comments.forEach(item=> {
+                      if(item.replies) {
+                        
+                      }
+                    })
                 }
                 
                 

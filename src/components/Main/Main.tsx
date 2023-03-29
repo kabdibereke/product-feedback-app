@@ -28,7 +28,7 @@ const Main = () => {
       onValue(ref(db), (snapshot) => {
         const data = snapshot.val()
         if (data !== null) {
-          console.log(Object.values(data))
+        
           dispatch(addList(Object.values(data)))
           setLoading(false)
         }
