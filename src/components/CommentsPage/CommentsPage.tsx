@@ -19,6 +19,7 @@ type Props = {}
 const CommentsPage = (props: Props) => {
     const {requestList} = useSelector((item:RootState)=>item.sortList)
     const { asPath } = useRouter()
+    const router=useRouter()
     const [commentList,setCommentList]= useState<IComments[]>([])
     const [replies, setReplies]= useState<IReplies[]>([])
     const [lastIndex, setLastIndex]=useState(0)
@@ -49,7 +50,7 @@ const CommentsPage = (props: Props) => {
               <Image className={styles.arrowBlue} src={arrowBack} alt="arrowBack" width={15} height={12}/>
               <p className={styles.go_back}>Go Back</p>
             </Link>
-            <Button types='edit'><Link className={styles.link} href={`/edit${asPath}`}>Edit Feedback</Link></Button>
+            <Button types='edit' onClick={()=>router.push(`/edit${asPath}`)}>Edit Feedback</Button>
           </div>
             {requestList.map((item,index)=> {
             if(item.id==+asPath.substring(1)) {
